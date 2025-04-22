@@ -9,6 +9,22 @@ public class Helicopter extends AerialVehicle{
         this.maxAltitude = maxAltitude;
     }
 
+    public int getRotorCount() {
+        return rotorCount;
+    }
+
+    public void setRotorCount(int rotorCount) {
+        this.rotorCount = rotorCount;
+    }
+
+    public int getMaxAltitude() {
+        return maxAltitude;
+    }
+
+    public void setMaxAltitude(int maxAltitude) {
+        this.maxAltitude = maxAltitude;
+    }
+
     @Override
     public void displayInfo() {
         super.displayInfo();

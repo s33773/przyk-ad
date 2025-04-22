@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class Airfield extends AerialVehicle{
     private String name;
-    private int capacity;
+    private int capacity=30;
     private String address;
-    ArrayList<AerialVehicle> aerialVehicles = new ArrayList<>(30);
+    ArrayList<AerialVehicle> aerialVehicles = new ArrayList<>(capacity);
 
 
     public Airfield(int registrationNumber, String color, String model, int yearOfProduction, String name, int capacity, String address) {
@@ -15,11 +15,27 @@ public class Airfield extends AerialVehicle{
         this.address = address;
     }
     public void addAerialVehicle(AerialVehicle vehicle){
-        if(aerialVehicles.size()<30){
+        for (AerialVehicle v : aerialVehicles) {
+            if (v.getRegistrationNumber() == vehicle.getRegistrationNumber()) {
+                throw new IllegalArgumentException("Error: Vehicle already on the airfield");
+            }
+        }
+        if(aerialVehicles.size()<capacity){
             aerialVehicles.add(vehicle);
             System.out.println("AerialVehicle added");
         }else{
-            System.out.println("No enough space");
+            throw new IllegalArgumentException("No space");
         }
     }
+    public void removeAerialVehicle(AerialVehicle vehicle) {
+        for (AerialVehicle v : aerialVehicles) {
+            if (v.getRegistrationNumber() == vehicle.getRegistrationNumber()) {
+                aerialVehicles.remove(v);
+                System.out.println("AerialVehicle removed");
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Error: Vehicle not found on the airfield");
+    }
+
 }

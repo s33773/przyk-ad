@@ -6,6 +6,14 @@ public class Glider extends AerialVehicle{
         this.wingLength = wingLength;
     }
 
+    public int getWingLength() {
+        return wingLength;
+    }
+
+    public void setWingLength(int wingLength) {
+        this.wingLength = wingLength;
+    }
+
     @Override
     public void displayInfo() {
         super.displayInfo();

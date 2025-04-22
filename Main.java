@@ -7,9 +7,8 @@ public class Main {
         Glider glider = new Glider(1,"x","x",1,1);
         glider.displayInfo();
         Airfield airfield = new Airfield(1,"x","x",1,"x",1,"x");
-        airfield.addAerialVehicle(helicopter);
+        airfield.addAerialVehicle(airfield);
+        Airfield airfield2 = new Airfield(2,"x","x",1,"x",1,"x");
+        airfield.removeAerialVehicle(airfield2);
     }
-
-
-
 }

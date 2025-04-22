@@ -8,6 +8,22 @@ public class Drone extends AerialVehicle {
         this.cameraEquipped = cameraEquipped;
     }
 
+    public int getBatteryLife() {
+        return batteryLife;
+    }
+
+    public void setBatteryLife(int batteryLife) {
+        this.batteryLife = batteryLife;
+    }
+
+    public String getCameraEquipped() {
+        return cameraEquipped;
+    }
+
+    public void setCameraEquipped(String cameraEquipped) {
+        this.cameraEquipped = cameraEquipped;
+    }
+
     @Override
     public void displayInfo() {
         super.displayInfo();
